@@ -1,0 +1,87 @@
+@import '../../../common.scss';
+
+.theme-dark .nav-menu {
+	background: $menu-dark;
+
+	.nav-menu-user {
+		.user-avatar {
+			background: $brand-dark;
+			color: $light-text-dark;
+		}
+
+		.user-name {
+			color: $light-text-dark;
+		}
+
+		.user-desc {
+			color: $title-dark;
+		}
+
+		.user-contacts {
+			& > * {
+				color: $title-dark;
+			}
+			& > *:hover {
+				color: $nav-dark;
+			}
+		}
+
+		.user-menu-collapse-button {
+			color: $highlight-dark;
+		}
+	}
+
+	.nav-menu-item {
+		background: $menu-dark;
+
+		.nav-menu-item-link {
+			color: $light-text-dark;
+
+			&:hover {
+				background: transparentize(#FFF, .95);
+				color: $light-text-dark;
+			}
+
+			&:active {
+				background: transparentize(#000, .9);
+			}
+
+			&.router-link-active {
+				color: #FFF;
+				background: $highlight-dark;
+				//background: transparentize(#000, .9);
+
+				.nav-menu-item-icon {
+					color: #FFF;
+				}
+
+				& ~ .nav-menu-item-collapse-button {
+					color: #FFF;
+				}
+
+				&:hover {
+					background: $highlight-dark;
+					color: #FFF;
+				}
+
+				&:active {
+					background: $highlight-dark;
+				}
+			}
+		}
+
+		.nav-menu-item-collapse-button {
+			color: $light-text-dark;
+		}
+
+		&.no-child {
+			.nav-menu-item-link {
+				&.router-link-active {
+					color: $highlight-dark;
+					background: transparent;
+				}
+			}
+		}
+	}
+
+}

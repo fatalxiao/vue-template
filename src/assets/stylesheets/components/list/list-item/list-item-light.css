@@ -1,0 +1,17 @@
+.theme-light .list-item {
+  background: #4C637B;
+  color: white;
+}
+.theme-light .list-item i {
+  color: white;
+}
+.theme-light .list-item:hover {
+  background: #56708b;
+  color: #F2F6FA;
+}
+.theme-light .list-item:active {
+  background: #4a6078;
+}
+.theme-light .list-item[disabled] {
+  background: #bdc9d6;
+}

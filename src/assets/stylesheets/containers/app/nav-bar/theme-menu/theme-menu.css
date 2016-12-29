@@ -1,0 +1,27 @@
+.theme-menu .button {
+  height: 100%;
+  line-height: 60px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+.theme-menu .button .dropdown-icon {
+  margin-left: 8px;
+}
+.theme-menu .theme-dropdown-menu .theme-thumbnail-wrapper {
+  width: 380px;
+  margin: auto;
+}
+.theme-menu .theme-dropdown-menu .theme-thumbnail-wrapper::before, .theme-menu .theme-dropdown-menu .theme-thumbnail-wrapper::after {
+  display: table;
+  content: "";
+}
+.theme-menu .theme-dropdown-menu .theme-thumbnail-wrapper::after {
+  clear: both;
+}
+.theme-menu .theme-dropdown-menu .theme-thumbnail-wrapper > * {
+  float: left;
+  margin-left: 60px;
+}
+.theme-menu .theme-dropdown-menu .theme-thumbnail-wrapper > *:first-child {
+  margin-left: 0;
+}

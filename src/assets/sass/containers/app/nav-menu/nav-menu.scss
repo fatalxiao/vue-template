@@ -1,0 +1,296 @@
+@import '../../../common.scss';
+
+.nav-menu {
+	position: fixed;
+	left: 0;
+	top: 60px;
+	width: 200px;
+	height: 100vh;
+	box-sizing: border-box;
+	overflow: hidden;
+	transition-property: width, opacity, transform !important;
+	transition-duration: $transition-duration !important;
+	transition-timing-function: ease-in-out !important;
+	z-index: $menu-z-index;
+
+	& > * {
+		margin-top: 15px;
+	}
+
+	.nav-menu-user {
+		overflow: hidden;
+		//transition: all $transition-duration ease-in-out;
+		position: relative;
+
+		& > * {
+			text-align: center;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			user-select: none;
+			transition: all $transition-duration ease-in-out;
+		}
+
+		.user-avatar {
+			display: block;
+			width: 96px;
+			height: 96px;
+			border-radius: 50%;
+			line-height: 96px;
+			font-size: 60px;
+			margin: 10px auto;
+		}
+
+		.user-name {
+			height: 30px;
+			line-height: 30px;
+			font-size: 16px;
+		}
+
+		.user-desc {
+			height: 20px;
+			line-height: 20px;
+
+			& > * {
+				margin-left: 4px;
+			}
+			& > *:first-child {
+				margin: 0;
+			}
+		}
+
+		.user-contacts {
+			margin-top: 10px;
+			font-size: 16px;
+			height: 20px;
+			line-height: 20px;
+
+			& > * {
+				cursor: pointer;
+				margin-left: 20px;
+			}
+
+			& > *:first-child {
+				margin: 0;
+			}
+		}
+
+		.user-menu-collapse-button {
+			position: absolute;
+			right: 10px;
+			top: 5px;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+			font-size: 20px;
+			cursor: pointer;
+		}
+
+		&.collapsed {
+
+			.user-avatar {
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				font-size: 18px;
+				margin: 0 15px;
+				float: left;
+			}
+
+			.user-name {
+				height: 30px;
+				line-height: 30px;
+				margin: 0 0 0 15px;
+				text-align: left;
+			}
+
+			.user-desc {
+				height: 0;
+			}
+
+			.user-contacts {
+				height: 0;
+				margin: 0;
+			}
+		}
+	}
+
+	.nav-menu-list {
+
+		.nav-menu-item {
+			position: relative;
+
+			.nav-menu-item-link {
+				display: block;
+				height: 50px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: clip;
+				padding: 10px;
+				text-decoration: none;
+				box-sizing: border-box;
+				font-size: 12px;
+				line-height: 30px;
+				cursor: pointer;
+				position: relative;
+				background: transparent;
+				transition: background $transition-duration ease-in-out;
+
+				& > * {
+					vertical-align: middle;
+				}
+
+				.nav-menu-item-icon {
+					display: inline-block;
+					width: 30px;
+					height: 30px;
+					line-height: 30px;
+					text-align: center;
+					transition: all $transition-duration ease-in-out;
+				}
+
+				.nav-menu-item-name {
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					transition: all $transition-duration ease-in-out;
+				}
+
+				&.router-link-active {
+					cursor: default;
+				}
+			}
+
+			.nav-menu-item-collapse-button {
+				cursor: pointer;
+				position: absolute;
+				right: 5px;
+				top: 10px;
+				width: 30px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+				font-size: 20px;
+			}
+
+			.nav-menu-item-children {
+				overflow: hidden;
+				transition: all $transition-duration ease-in-out;
+			}
+
+			&.collapsed {
+				.nav-menu-item-children {
+					height: 0;
+					transform: translate3D(-20px, 0, 0);
+					//margin-left: -20px;
+					opacity: 0;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.app.collapsed {
+		.nav-menu {
+			overflow: visible;
+			width: 60px;
+			transition: all $transition-duration ease-in-out;
+
+			.nav-menu-user {
+
+				& > * {
+					width: 0;
+					height: 0;
+					margin-top: 0;
+					margin-bottom: 0;
+				}
+
+				.user-avatar {
+					width: 30px;
+					height: 30px;
+					line-height: 30px;
+					font-size: 18px;
+				}
+			}
+		}
+
+		.nav-menu-list {
+			overflow: visible;
+
+			.nav-menu-item {
+				overflow: visible;
+
+				.nav-menu-item-link {
+					z-index: 1;
+
+					.nav-menu-item-icon {
+						width: 40px;
+					}
+
+					.nav-menu-item-name {
+						opacity: 0;
+						width: 0;
+					}
+				}
+
+				.nav-menu-item-collapse-button {
+					display: none;
+					opacity: 0;
+				}
+
+				.nav-menu-item-children {
+					height: 0;
+					transform: translate3D(-20px, 0, 0);
+				}
+
+				&:hover {
+					.nav-menu-item-children {
+						position: absolute;
+						top: 0;
+						left: 60px;
+						height: auto;
+						opacity: 1;
+						transform: none;
+						width: 200px;
+
+						* {
+							opacity: 1 !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.app {
+		.nav-menu {
+			width: 100% !important;
+			top: 0 !important;
+			padding: 10% 0 !important;
+			z-index: $menu-mobile-z-index;
+
+			.nav-menu-user {
+				width: 80% !important;
+
+				.user-contacts {
+					transition: none;
+				}
+			}
+
+			.nav-menu-list {
+				width: 80% !important;
+			}
+		}
+
+		&.collapsed {
+			.nav-menu {
+				transform: translate3d(-75%, 0, 0) scale(.9);
+				opacity: 0;
+			}
+		}
+	}
+}

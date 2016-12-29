@@ -1,0 +1,80 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+}
+.app .content-wrap {
+  position: absolute;
+  width: calc(100% - 200px);
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  margin-left: 200px;
+  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
+  z-index: 70;
+  transition: all 200ms ease-in-out;
+}
+.app .content-wrap > .content {
+  box-shadow: rgba(0, 0, 0, 0.11765) 0px 1px 6px, rgba(0, 0, 0, 0.11765) 0px 1px 4px;
+  box-sizing: border-box;
+  padding: 60px 0 0 0;
+  min-height: 100%;
+  transition: all 200ms ease-in-out;
+}
+.app .content-wrap > .content .content-router-view {
+  min-height: 100%;
+}
+.app .content-wrap > .content .content-router-view::before, .app .content-wrap > .content .content-router-view::after {
+  display: table;
+  content: "";
+}
+.app .content-wrap > .content .content-router-view::after {
+  clear: both;
+}
+.app .content-wrap > .content .copyright {
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 12px;
+  padding: 20px 0;
+}
+.app.collapsed .content-wrap {
+  width: calc(100% - 60px);
+  margin-left: 60px;
+}
+
+@media (max-width: 767px) {
+  .app .content-wrap {
+    transform: translate3d(75%, 0, 0) scale(0.9);
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    z-index: 80;
+  }
+  .app.collapsed .content-wrap {
+    transform: none;
+    width: 100%;
+    margin: 0;
+    overflow: auto;
+  }
+}
+.theme-dark .app {
+  background: #364760;
+}
+.theme-dark .app .content {
+  background: #D5DAE6;
+}
+.theme-dark .app .content .copyright {
+  color: #abb3c6;
+}
+
+.theme-light .app {
+  background: #4C637B;
+}
+.theme-light .app .content {
+  background: #FFFFFF;
+}
+.theme-light .app .content .copyright {
+  color: #dce3ea;
+}

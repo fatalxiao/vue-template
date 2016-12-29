@@ -1,0 +1,25 @@
+.module-header {
+  box-shadow: rgba(0, 0, 0, 0.11765) 0px 1px 6px, rgba(0, 0, 0, 0.11765) 0px 1px 4px;
+  width: 100%;
+  height: 80px;
+  box-sizing: border-box;
+  padding: 20px;
+  line-height: 40px;
+  font-size: 20px;
+  text-align: left;
+  user-select: none;
+  cursor: default;
+}
+.module-header .slot {
+  float: right;
+}
+
+.theme-dark .module-header {
+  color: #6A788D;
+  background: #EEF1F7;
+}
+
+.theme-light .module-header {
+  color: #758697;
+  background: #F2F6FA;
+}

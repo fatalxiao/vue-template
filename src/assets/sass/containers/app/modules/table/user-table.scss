@@ -1,0 +1,16 @@
+@import '../../../../common.scss';
+
+.user-table {
+
+	.reload-button {
+		width: 30px;
+		line-height: 30px;
+		text-align: center;
+		color: $field-dark;
+		font-size: 16px;
+		cursor: pointer;
+		transform: rotate(-30deg);
+		transition: all $transition-duration ease-in-out;
+	}
+
+}

@@ -1,0 +1,16 @@
+.theme-light .brand {
+  background: #4C637B;
+  color: #B8C6D6;
+}
+.theme-light .brand .brand-name i {
+  color: #38B1EB;
+}
+.theme-light .brand .brand-collapse .brand-collapse-inner .menu-toggle-button {
+  background: #4C637B;
+}
+
+@media (max-width: 767px) {
+  .theme-light .brand {
+    background: #344C67 !important;
+  }
+}

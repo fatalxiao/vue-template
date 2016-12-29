@@ -1,0 +1,1 @@
+export const isDesktop = state => state.Device.isDesktop;

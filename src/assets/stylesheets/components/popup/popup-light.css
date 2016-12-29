@@ -1,0 +1,9 @@
+.theme-light .popup .triangle {
+  border-bottom: 6px solid #4C637B;
+}
+.theme-light .popup .content {
+  background: #4C637B;
+}
+.theme-light .popup[disabled] .triangle {
+  border-bottom: 6px solid #bdc9d6;
+}

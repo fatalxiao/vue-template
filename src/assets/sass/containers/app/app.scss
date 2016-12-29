@@ -1,0 +1,96 @@
+@import '../../common.scss';
+
+.app {
+	width: 100vw;
+	height: 100vh;
+
+	.content-wrap {
+		position: absolute;
+		width: calc(100% - 200px);
+		height: 100%;
+		overflow: auto;
+		box-sizing: border-box;
+		margin-left: 200px;
+		overflow-scrolling: touch;
+		-webkit-overflow-scrolling: touch;
+		z-index: $content-wrap-z-index;
+		transition: all $transition-duration ease-in-out;
+
+		& > .content {
+			@include shadow;
+
+			box-sizing: border-box;
+			padding: 60px 0 0 0;
+			min-height: 100%;
+			transition: all $transition-duration ease-in-out;
+
+			.content-router-view {
+				@include floatfix;
+
+				min-height: 100%;
+			}
+
+			.copyright {
+				width: 100%;
+				height: 20px;
+				line-height: 20px;
+				text-align: center;
+				font-size: 12px;
+				padding: 20px 0;
+			}
+		}
+	}
+
+	&.collapsed {
+		.content-wrap {
+			width: calc(100% - 60px);
+			margin-left: 60px;
+		}
+	}
+
+}
+
+@media (max-width: 767px) {
+	.app {
+		.content-wrap {
+			transform: translate3d(75%, 0, 0) scale(.9);
+			width: 100%;
+			margin: 0;
+			overflow: hidden;
+			z-index: $content-wrap-mobile-z-index;
+		}
+
+		&.collapsed {
+			.content-wrap {
+				transform: none;
+				width: 100%;
+				margin: 0;
+				overflow: auto;
+			}
+		}
+	}
+}
+
+.theme-dark .app {
+	background: $menu-dark;
+
+	.content {
+		background: $bg-dark;
+
+		.copyright {
+			color: lighten($text-dark, 10%);
+		}
+	}
+}
+
+.theme-light .app {
+	background: $menu-light;
+
+	.content {
+		background: $bg-light;
+
+		.copyright {
+			color: lighten($text-light, 50%);
+		}
+	}
+}

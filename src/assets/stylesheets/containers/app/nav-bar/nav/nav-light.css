@@ -1,0 +1,15 @@
+.theme-light .nav .nav-collapse {
+  background: #E3EAF3;
+}
+.theme-light .nav .nav-collapse .left > * {
+  color: #98acc3;
+}
+.theme-light .nav .nav-collapse .left > *:hover {
+  color: #B8C6D6;
+}
+.theme-light .nav .nav-collapse .left .user-menu-button {
+  color: #4C637B;
+}
+.theme-light .nav .nav-collapse .left .user-menu-button:hover {
+  color: #5f7c9b;
+}

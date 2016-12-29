@@ -1,0 +1,18 @@
+.popup {
+  position: fixed;
+  width: 200px;
+}
+.popup .triangle {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 6px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+.popup .content {
+  box-shadow: rgba(0, 0, 0, 0.11765) 0px 1px 6px, rgba(0, 0, 0, 0.11765) 0px 1px 4px;
+  width: 100%;
+  margin-top: 6px;
+  border-radius: 4px;
+}

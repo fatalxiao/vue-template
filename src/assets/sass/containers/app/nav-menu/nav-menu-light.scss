@@ -1,0 +1,93 @@
+@import '../../../common.scss';
+
+.theme-light .nav-menu {
+	background: $menu-light;
+
+	.nav-menu-user {
+		.user-avatar {
+			background: $brand-light;
+			color: $nav-light;
+		}
+
+		.user-name {
+			color: $nav-light;
+		}
+
+		.user-desc {
+			color: $title-light;
+		}
+
+		.user-contacts {
+			& > * {
+				color: $title-light;
+			}
+			& > *:hover {
+				color: $nav-light;
+			}
+		}
+
+		.user-menu-collapse-button {
+			color: $highlight-light;
+		}
+	}
+
+	.nav-menu-item {
+
+		.nav-menu-item-link {
+			color: #FFF;
+			background: darken($menu-light, 8%);
+
+			&:hover {
+				color: #FFF;
+				background: darken($menu-light, 6%);
+			}
+
+			&:focus {
+				color: #FFF;
+				background: darken($menu-light, 6%);
+			}
+		}
+
+		.nav-menu-item-collapse-button {
+			color: $light-text-light;
+		}
+
+		&.collapsed {
+			.nav-menu-item-link {
+				color: $light-text-light;
+				background: $menu-light;
+
+				&:hover {
+					color: #FFF;
+					background: darken($menu-light, 6%);
+				}
+
+				&:focus {
+					color: #FFF;
+					background: darken($menu-light, 6%);
+				}
+			}
+		}
+
+		&.leaf {
+			.nav-menu-item-link {
+				background: darken($menu-light, 8%);
+
+				&:hover {
+					color: #FFF;
+					background: darken($menu-light, 6%);
+				}
+
+				&:focus {
+					color: #FFF;
+					background: darken($menu-light, 6%);
+				}
+
+				&.router-link-active {
+					color: #FFF;
+				}
+			}
+		}
+	}
+
+}

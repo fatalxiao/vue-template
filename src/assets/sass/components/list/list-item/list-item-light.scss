@@ -1,0 +1,23 @@
+@import '../../../common.scss';
+
+.theme-light .list-item {
+	background: $popup-light;
+	color: lighten($field-light, 10%);
+
+	i {
+		color: lighten($field-light, 20%);
+	}
+
+	&:hover {
+		background: lighten($popup-light, 5%);
+		color: $field-light;
+	}
+
+	&:active {
+		background: darken($popup-light, 1%);
+	}
+
+	&[disabled] {
+		background: lighten($popup-light, 40%);
+	}
+}

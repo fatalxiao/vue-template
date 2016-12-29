@@ -1,0 +1,191 @@
+@import '../../../common.scss';
+
+.simple-table {
+	position: relative;
+
+	.loading-mask {
+		position: absolute;
+		left: -99999px;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transition: opacity $transition-duration ease-in-out, left 0s ease-in-out $transition-duration;
+
+		i {
+			color: $title-dark;
+			font-size: 40px;
+			width: 40px;
+			height: 40px;
+			text-align: center;
+			line-height: 40px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -20px;
+			margin-top: -20px;
+		}
+	}
+
+	.simple-table-header {
+		width: 100%;
+		height: 50px;
+		box-sizing: border-box;
+
+		.header {
+			float: left;
+			height: 50px;
+			line-height: 50px;
+			box-sizing: border-box;
+			padding: 0 20px;
+			font-size: 14px;
+			background: transparent;
+			cursor: default;
+			user-select: none;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+
+		&.scroll {
+			width: calc(100% - 8px);
+		}
+	}
+
+	.simple-table-content {
+		width: 100%;
+		height: 600px;
+		position: relative;
+		overflow-y: auto;
+		overflow-scrolling: touch;
+		-webkit-overflow-scrolling: touch;
+
+		.simple-table-content-scroller {
+
+			.row {
+				width: 100%;
+				position: absolute;
+				left: 0;
+				height: 60px;
+				box-sizing: border-box;
+				transition: none;
+
+				.cell {
+					float: left;
+					height: 60px;
+					line-height: 60px;
+					background: transparent;
+					box-sizing: border-box;
+					padding: 0 20px;
+					font-size: 12px;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+				}
+			}
+
+			.row:first-child {
+				border-top: none;
+			}
+		}
+	}
+
+	.simple-table-footer {
+		height: 40px;
+		line-height: 40px;
+		box-sizing: border-box;
+		padding: 0 20px;
+
+		.count {
+			float: right;
+		}
+	}
+
+	&.loading {
+		.loading-mask {
+			opacity: 1;
+			left: 0;
+			transition: opacity $transition-duration ease-in-out;
+		}
+	}
+}
+
+.theme-dark .simple-table {
+	background: $title-bg-dark;
+
+	.loading-mask {
+		background: transparentize(#FFF, .2);
+
+		i {
+			color: $title-dark;
+		}
+	}
+
+	.simple-table-header {
+		border-bottom: 1px solid darken($title-bg-dark, 4%);
+		background: $title-bg-dark;
+
+		.header {
+			color: $title-dark;
+		}
+	}
+
+	.simple-table-content {
+		.simple-table-content-scroller {
+			.row {
+				color: $text-dark;
+
+				&.odd {
+					background: $content-bg-dark;
+				}
+				&.even {
+					background: $title-bg-dark;
+				}
+			}
+		}
+	}
+
+	.simple-table-footer {
+		background: $content-bg-dark;
+	}
+}
+
+.theme-light .simple-table {
+	background: $title-bg-light;
+
+	.loading-mask {
+		background: transparentize(#FFF, .2);
+
+		i {
+			color: $title-light;
+		}
+	}
+
+	.simple-table-header {
+		border-bottom: 1px solid darken($title-bg-light, 4%);
+		background: $title-bg-light;
+
+		.header {
+			color: $title-light;
+		}
+	}
+
+	.simple-table-content {
+		.simple-table-content-scroller {
+			.row {
+				color: $text-light;
+
+				&.odd {
+					background: $content-bg-light;
+				}
+				&.even {
+					background: $title-bg-light;
+				}
+			}
+		}
+	}
+
+	.simple-table-footer {
+		background: $content-bg-light;
+	}
+}

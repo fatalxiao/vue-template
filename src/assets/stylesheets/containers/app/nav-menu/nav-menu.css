@@ -1,0 +1,233 @@
+.nav-menu {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  width: 200px;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition-property: width, opacity, transform !important;
+  transition-duration: 200ms !important;
+  transition-timing-function: ease-in-out !important;
+  z-index: 80;
+}
+.nav-menu > * {
+  margin-top: 15px;
+}
+.nav-menu .nav-menu-user {
+  overflow: hidden;
+  position: relative;
+}
+.nav-menu .nav-menu-user > * {
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  user-select: none;
+  transition: all 200ms ease-in-out;
+}
+.nav-menu .nav-menu-user .user-avatar {
+  display: block;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  line-height: 96px;
+  font-size: 60px;
+  margin: 10px auto;
+}
+.nav-menu .nav-menu-user .user-name {
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+}
+.nav-menu .nav-menu-user .user-desc {
+  height: 20px;
+  line-height: 20px;
+}
+.nav-menu .nav-menu-user .user-desc > * {
+  margin-left: 4px;
+}
+.nav-menu .nav-menu-user .user-desc > *:first-child {
+  margin: 0;
+}
+.nav-menu .nav-menu-user .user-contacts {
+  margin-top: 10px;
+  font-size: 16px;
+  height: 20px;
+  line-height: 20px;
+}
+.nav-menu .nav-menu-user .user-contacts > * {
+  cursor: pointer;
+  margin-left: 20px;
+}
+.nav-menu .nav-menu-user .user-contacts > *:first-child {
+  margin: 0;
+}
+.nav-menu .nav-menu-user .user-menu-collapse-button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+.nav-menu .nav-menu-user.collapsed .user-avatar {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  margin: 0 15px;
+  float: left;
+}
+.nav-menu .nav-menu-user.collapsed .user-name {
+  height: 30px;
+  line-height: 30px;
+  margin: 0 0 0 15px;
+  text-align: left;
+}
+.nav-menu .nav-menu-user.collapsed .user-desc {
+  height: 0;
+}
+.nav-menu .nav-menu-user.collapsed .user-contacts {
+  height: 0;
+  margin: 0;
+}
+.nav-menu .nav-menu-list .nav-menu-item {
+  position: relative;
+}
+.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-link {
+  display: block;
+  height: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+  padding: 10px;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 30px;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+  transition: background 200ms ease-in-out;
+}
+.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-link > * {
+  vertical-align: middle;
+}
+.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-link .nav-menu-item-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  transition: all 200ms ease-in-out;
+}
+.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-link .nav-menu-item-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all 200ms ease-in-out;
+}
+.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-link.router-link-active {
+  cursor: default;
+}
+.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-collapse-button {
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 20px;
+}
+.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-children {
+  overflow: hidden;
+  transition: all 200ms ease-in-out;
+}
+.nav-menu .nav-menu-list .nav-menu-item.collapsed .nav-menu-item-children {
+  height: 0;
+  transform: translate3D(-20px, 0, 0);
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .app.collapsed .nav-menu {
+    overflow: visible;
+    width: 60px;
+    transition: all 200ms ease-in-out;
+  }
+  .app.collapsed .nav-menu .nav-menu-user > * {
+    width: 0;
+    height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .app.collapsed .nav-menu .nav-menu-user .user-avatar {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+  }
+  .app.collapsed .nav-menu-list {
+    overflow: visible;
+  }
+  .app.collapsed .nav-menu-list .nav-menu-item {
+    overflow: visible;
+  }
+  .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-link {
+    z-index: 1;
+  }
+  .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-link .nav-menu-item-icon {
+    width: 40px;
+  }
+  .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-link .nav-menu-item-name {
+    opacity: 0;
+    width: 0;
+  }
+  .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-collapse-button {
+    display: none;
+    opacity: 0;
+  }
+  .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-children {
+    height: 0;
+    transform: translate3D(-20px, 0, 0);
+  }
+  .app.collapsed .nav-menu-list .nav-menu-item:hover .nav-menu-item-children {
+    position: absolute;
+    top: 0;
+    left: 60px;
+    height: auto;
+    opacity: 1;
+    transform: none;
+    width: 200px;
+  }
+  .app.collapsed .nav-menu-list .nav-menu-item:hover .nav-menu-item-children * {
+    opacity: 1 !important;
+  }
+}
+@media (max-width: 767px) {
+  .app .nav-menu {
+    width: 100% !important;
+    top: 0 !important;
+    padding: 10% 0 !important;
+    z-index: 70;
+  }
+  .app .nav-menu .nav-menu-user {
+    width: 80% !important;
+  }
+  .app .nav-menu .nav-menu-user .user-contacts {
+    transition: none;
+  }
+  .app .nav-menu .nav-menu-list {
+    width: 80% !important;
+  }
+  .app.collapsed .nav-menu {
+    transform: translate3d(-75%, 0, 0) scale(0.9);
+    opacity: 0;
+  }
+}

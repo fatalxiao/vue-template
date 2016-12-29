@@ -1,0 +1,27 @@
+.dropdown-menu {
+  box-shadow: rgba(0, 0, 0, 0.11765) 0px 1px 6px, rgba(0, 0, 0, 0.11765) 0px 1px 4px;
+  position: absolute;
+  top: 0;
+  left: -99999px;
+  opacity: 0;
+  z-index: -1;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
+  transition: left 0s 200ms, top 200ms ease-in-out, opacity 200ms ease-in-out;
+}
+.dropdown-menu.activated {
+  top: 60px;
+  left: 0;
+  opacity: 1;
+  transition: left 0s, top 200ms ease-in-out, opacity 200ms ease-in-out;
+}
+
+.theme-dark .dropdown-menu {
+  background: #EEF1F7;
+}
+
+.theme-light .dropdown-menu {
+  background: #E3EAF3;
+}

@@ -1,0 +1,59 @@
+.theme-dark .nav-menu {
+  background: #364760;
+}
+.theme-dark .nav-menu .nav-menu-user .user-avatar {
+  background: #2A394F;
+  color: #F0F4F6;
+}
+.theme-dark .nav-menu .nav-menu-user .user-name {
+  color: #F0F4F6;
+}
+.theme-dark .nav-menu .nav-menu-user .user-desc {
+  color: #6A788D;
+}
+.theme-dark .nav-menu .nav-menu-user .user-contacts > * {
+  color: #6A788D;
+}
+.theme-dark .nav-menu .nav-menu-user .user-contacts > *:hover {
+  color: #364760;
+}
+.theme-dark .nav-menu .nav-menu-user .user-menu-collapse-button {
+  color: #5AB0EE;
+}
+.theme-dark .nav-menu .nav-menu-item {
+  background: #364760;
+}
+.theme-dark .nav-menu .nav-menu-item .nav-menu-item-link {
+  color: #F0F4F6;
+}
+.theme-dark .nav-menu .nav-menu-item .nav-menu-item-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #F0F4F6;
+}
+.theme-dark .nav-menu .nav-menu-item .nav-menu-item-link:active {
+  background: rgba(0, 0, 0, 0.1);
+}
+.theme-dark .nav-menu .nav-menu-item .nav-menu-item-link.router-link-active {
+  color: #FFF;
+  background: #5AB0EE;
+}
+.theme-dark .nav-menu .nav-menu-item .nav-menu-item-link.router-link-active .nav-menu-item-icon {
+  color: #FFF;
+}
+.theme-dark .nav-menu .nav-menu-item .nav-menu-item-link.router-link-active ~ .nav-menu-item-collapse-button {
+  color: #FFF;
+}
+.theme-dark .nav-menu .nav-menu-item .nav-menu-item-link.router-link-active:hover {
+  background: #5AB0EE;
+  color: #FFF;
+}
+.theme-dark .nav-menu .nav-menu-item .nav-menu-item-link.router-link-active:active {
+  background: #5AB0EE;
+}
+.theme-dark .nav-menu .nav-menu-item .nav-menu-item-collapse-button {
+  color: #F0F4F6;
+}
+.theme-dark .nav-menu .nav-menu-item.no-child .nav-menu-item-link.router-link-active {
+  color: #5AB0EE;
+  background: transparent;
+}

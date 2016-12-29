@@ -1,0 +1,72 @@
+@import '../../common.scss';
+
+.signin {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	h1 {
+		width: 400px;
+		line-height: 40px;
+		text-align: center;
+		margin: 10% auto 2%;
+	}
+
+	.form {
+		width: 400px;
+		margin: 0 auto;
+		box-sizing: border-box;
+		background: transparent;
+		padding: 10px;
+
+		.field {
+			width: 100%;
+			margin-top: 20px;
+		}
+
+		.error-msg {
+			margin-top: 10px;
+			width: 100%;
+			height: 20px;
+			line-height: 20px;
+			color: $error;
+			font-size: 14px;
+			text-align: center;
+		}
+
+		.sign-in-button {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+	}
+
+	.copyright {
+		width: 400px;
+		text-align: center;
+		margin: 20px auto;
+		font-size: 12px;
+		line-height: 20px;
+		transition: all $transition-duration ease-in-out;
+	}
+}
+
+@media (max-width: 767px) {
+	.signin {
+		min-width: $minWidth;
+
+		h1 {
+			width: 100%;
+			margin: 20% auto 4%;
+		}
+
+		.form {
+			width: 100%;
+		}
+
+		.copyright {
+			font-size: 12px;
+			width: 100%;
+		}
+	}
+}

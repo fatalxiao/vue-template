@@ -1,0 +1,63 @@
+.brand {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 60px;
+  font-size: 16px;
+  line-height: 60px;
+  text-align: left;
+  cursor: default;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
+  z-index: 1;
+}
+.brand .menu-toggle-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  float: left;
+  cursor: pointer;
+  display: none;
+}
+.brand .brand-name {
+  padding: 0 18px;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 60px;
+  height: 60px;
+}
+.brand .brand-name > * {
+  vertical-align: middle;
+}
+.brand .brand-name i {
+  width: 24px;
+  height: 100%;
+  line-height: 60px;
+  margin-right: 8px;
+  text-align: center;
+  font-size: 24px;
+  transform: scale(0.8, 1);
+}
+
+.app.collapsed .nav .brand {
+  width: 60px;
+}
+
+@media (max-width: 767px) {
+  .brand {
+    box-shadow: rgba(0, 0, 0, 0.11765) 0px 1px 6px, rgba(0, 0, 0, 0.11765) 0px 1px 4px;
+    width: 100% !important;
+  }
+  .brand .menu-toggle-button {
+    display: block;
+  }
+  .brand .brand-name {
+    text-align: center;
+  }
+}

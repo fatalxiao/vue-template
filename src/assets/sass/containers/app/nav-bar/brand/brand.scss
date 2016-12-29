@@ -1,0 +1,77 @@
+@import '../../../../common.scss';
+
+.brand {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 200px;
+	height: 60px;
+	font-size: 16px;
+	line-height: 60px;
+	text-align: left;
+	cursor: default;
+	transition: all $transition-duration ease-in-out;
+	overflow: hidden;
+	z-index: 1;
+
+	.menu-toggle-button {
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: block;
+		width: 60px;
+		height: 60px;
+		text-align: center;
+		line-height: 60px;
+		float: left;
+		cursor: pointer;
+		display: none;
+	}
+
+	.brand-name {
+		padding: 0 18px;
+		box-sizing: border-box;
+		overflow: hidden;
+		line-height: 60px;
+		height: 60px;
+
+		& > * {
+			vertical-align: middle;
+		}
+
+		i {
+			width: 24px;
+			height: 100%;
+			line-height: 60px;
+			margin-right: 8px;
+			text-align: center;
+			font-size: 24px;
+			transform: scale(.8, 1);
+		}
+	}
+
+}
+
+.app.collapsed {
+	.nav {
+		.brand {
+			width: 60px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.brand {
+		@include shadow;
+
+		width: 100% !important;
+
+		.menu-toggle-button {
+			display: block;
+		}
+
+		.brand-name {
+			text-align: center;
+		}
+	}
+}

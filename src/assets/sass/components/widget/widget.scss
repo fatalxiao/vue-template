@@ -1,0 +1,9 @@
+@import '../../common.scss';
+
+.widget {
+	@include shadow;
+
+	border-radius: 4px;
+	background: #FFF;
+	margin: 20px;
+}

@@ -1,0 +1,17 @@
+.theme-dark .list-item {
+  background: #364760;
+  color: white;
+}
+.theme-dark .list-item i {
+  color: white;
+}
+.theme-dark .list-item:hover {
+  background: #3f5370;
+  color: #F0F4F6;
+}
+.theme-dark .list-item:active {
+  background: #34455d;
+}
+.theme-dark .list-item[disabled] {
+  background: #9badc7;
+}

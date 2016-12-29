@@ -1,0 +1,31 @@
+@import '../../../../common.scss';
+
+.signout-menu {
+
+	.button {
+		height: 100%;
+		line-height: 60px;
+		padding: 0 20px;
+		cursor: pointer;
+		transition: color $transition-duration ease-in-out;
+
+		.dropdown-icon {
+			margin-left: 8px;
+			transition: color $transition-duration ease-in-out;
+		}
+	}
+
+	.popup {
+		right: 10px;
+		top: 66px;
+
+		.triangle {
+			left: auto;
+			right: 8px;
+		}
+
+		.signout {
+			width: 100%;
+		}
+	}
+}

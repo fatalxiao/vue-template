@@ -1,0 +1,10 @@
+.user-table .reload-button {
+  width: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #8C97B2;
+  font-size: 16px;
+  cursor: pointer;
+  transform: rotate(-30deg);
+  transition: all 200ms ease-in-out;
+}

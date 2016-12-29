@@ -1,0 +1,12 @@
+.theme-dark .signout-menu .button {
+  color: #F0F4F6;
+}
+.theme-dark .signout-menu .button .dropdown-icon {
+  color: #5AB0EE;
+}
+.theme-dark .signout-menu .button:hover {
+  color: white;
+}
+.theme-dark .signout-menu .button:hover .dropdown-icon {
+  color: #88c6f3;
+}

@@ -1,0 +1,85 @@
+@import '../../common';
+
+.search-bar {
+	height: 30px;
+	border-radius: 15px;
+	padding: 0 5px 0 10px;
+
+	& > * {
+		display: block;
+		float: left;
+	}
+
+	input {
+		width: 100px;
+		height: 30px;
+		padding: 5px 8px;
+		box-sizing: border-box;
+		border: none;
+		background: transparent;
+		transition: width $transition-duration ease-in-out;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		font-size: 12px;
+		line-height: 20px;
+	}
+
+	i {
+		font-size: 14px;
+		width: 20px;
+		height: 30px;
+		text-align: center;
+		line-height: 30px;
+
+		&.clear-button {
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			margin: 7px 0;
+			text-align: center;
+			line-height: 16px;
+			cursor: pointer;
+			font-size: 12px;
+		}
+	}
+
+	&.focused {
+		input {
+			width: 150px;
+		}
+	}
+}
+
+.theme-dark .search-bar {
+	background: $field-dark;
+
+	input {
+		color: $light-text-dark;
+	}
+
+	i {
+		color: transparentize($light-text-dark, .3);
+
+		&.clear-button {
+			color: $field-dark;
+			background: transparentize($light-text-dark, .3);
+		}
+	}
+}
+
+.theme-light .search-bar {
+	background: $field-light;
+
+	input {
+		color: $text-light;
+	}
+
+	i {
+		color: transparentize($text-light, .3);
+
+		&.clear-button {
+			color: $field-light;
+			background: transparentize($text-light, .3);
+		}
+	}
+}

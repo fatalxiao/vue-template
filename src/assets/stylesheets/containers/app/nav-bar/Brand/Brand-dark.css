@@ -1,0 +1,10 @@
+.theme-dark .brand {
+  background: #2A394F;
+  color: #F0F4F6;
+}
+.theme-dark .brand .brand-name i {
+  color: #5AB0EE;
+}
+.theme-dark .brand .brand-collapse .brand-collapse-inner .menu-toggle-button {
+  background: #364760;
+}

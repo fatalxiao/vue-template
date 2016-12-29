@@ -1,0 +1,13 @@
+@import '../../common.scss';
+
+.theme-dark .signin {
+	background: $title-bg-dark;
+
+	h1 {
+		color: $brand-dark;
+	}
+
+	.copyright {
+		color: lighten($text-dark, 10%);
+	}
+}

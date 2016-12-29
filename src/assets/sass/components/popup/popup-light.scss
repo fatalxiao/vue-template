@@ -1,0 +1,19 @@
+@import '../../common.scss';
+
+.theme-light .popup {
+
+	.triangle {
+		border-bottom: 6px solid $popup-light;
+	}
+
+	.content {
+		background: $popup-light;
+	}
+
+	&[disabled] {
+		.triangle {
+			border-bottom: 6px solid lighten($popup-light, 40%);
+		}
+	}
+
+}

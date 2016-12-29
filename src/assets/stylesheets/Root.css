@@ -1,0 +1,55 @@
+#root {
+  min-width: 320px;
+  overflow-x: hidden;
+  transition: none;
+}
+#root .root-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+}
+#root .root-loading i {
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  line-height: 48px;
+  font-size: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -24px 0 0 -24px;
+}
+#root.theme-dark {
+  color: #8C97B2;
+  background: #D5DAE6;
+}
+#root.theme-dark .root-loading {
+  background: #EEF1F7;
+}
+#root.theme-dark .root-loading i {
+  color: #2A394F;
+}
+#root.theme-light {
+  color: #4C637B;
+  background: #FFFFFF;
+}
+#root.theme-light .root-loading {
+  background: #E3EAF3;
+}
+#root.theme-light .root-loading i {
+  color: #4C637B;
+}
+
+@media (max-width: 767px) {
+  #root.theme-dark {
+    color: #8C97B2;
+    background: #364760;
+  }
+  #root.theme-light {
+    color: #4C637B;
+    background: #4C637B;
+  }
+}

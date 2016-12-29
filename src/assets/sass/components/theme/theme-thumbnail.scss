@@ -1,0 +1,129 @@
+@import '../../common.scss';
+
+.theme-thumbnail {
+	width: 160px;
+	cursor: pointer;
+
+	.theme {
+		width: 100%;
+		height: 80px;
+
+		& > * {
+			float: left;
+		}
+
+		.theme-thumbnail-brand {
+			width: 40px;
+			height: 20px;
+
+			&.dark {
+				background: $brand-dark;
+			}
+
+			&.light {
+				background: $menu-light;
+			}
+		}
+
+		.theme-thumbnail-nav {
+			width: 120px;
+			height: 20px;
+
+			&.dark {
+				background: $nav-dark;
+			}
+
+			&.light {
+				background: $nav-light;
+			}
+		}
+
+		.theme-thumbnail-menu {
+			width: 40px;
+			height: 60px;
+
+			&.dark {
+				background: $menu-dark;
+			}
+
+			&.light {
+				background: $menu-light;
+			}
+		}
+
+		.theme-thumbnail-content {
+			width: 120px;
+			height: 60px;
+
+			&.dark {
+				background: $bg-dark;
+			}
+
+			&.light {
+				background: $bg-light;
+			}
+		}
+	}
+
+	.title {
+		width: 80px;
+		height: 24px;
+		margin: 10px auto 0;
+
+		.button {
+			line-height: 24px;
+			text-align: center;
+			background: transparentize(#FFF, .5);
+			border-radius: 12px;
+			color: $text-dark;
+
+			&:hover {
+				background: transparentize(#FFF, .2);
+			}
+		}
+	}
+
+	&.activated {
+		.title {
+			.button {
+				background: $success;
+				color: #FFF;
+				padding: 0;
+			}
+		}
+	}
+}
+
+.theme-dark .theme-thumbnail {
+
+	.title {
+		.button {
+			color: $text-dark;
+		}
+	}
+
+	&.activated {
+		.title {
+			.button {
+				color: #FFF;
+			}
+		}
+	}
+}
+
+.theme-light .theme-thumbnail {
+
+	.title {
+		.button {
+			color: $text-light;
+		}
+	}
+
+	&.activated {
+		.title {
+			.button {
+				color: #FFF;
+			}
+		}
+	}
+}

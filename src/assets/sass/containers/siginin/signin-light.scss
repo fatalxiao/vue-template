@@ -1,0 +1,13 @@
+@import '../../common.scss';
+
+.theme-light .signin {
+	background: $title-bg-light;
+
+	h1 {
+		color: $menu-light;
+	}
+
+	.copyright {
+		color: lighten($text-light, 40%);
+	}
+}
