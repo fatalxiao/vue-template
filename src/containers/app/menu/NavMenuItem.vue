@@ -1,48 +1,35 @@
 <template>
-    <div class="nav-menu-item"
-         :class="[options.expanded == true ? 'expand' : 'collapsed', hasChildren ? 'trunk': 'leaf']">
+    <div class="nav-menu-item">
 
-        <div>
+        <a href="javascript:void(0)"
+           class="nav-menu-item-folder"
+           :class="{'hasChildren': hasChildren}"
+           :disabled="options.disabled"
+           @mousedown="menuMousedownHandle">
 
-            <router-link v-if="options.route"
-                         ref="linkRouter"
-                         class="nav-menu-item-link"
-                         :to="options.route"
-                         :disabled="options.disabled"
-                         events="mousedown">
-                <i class="nav-menu-item-icon"
-                   aria-hidden="true"
-                   :class="options.iconCls"></i>
-                <span class="nav-menu-item-name">
-                    {{options.text}}
-                </span>
-            </router-link>
+            <i class="nav-menu-item-icon"
+               aria-hidden="true"
+               :class="options.iconCls"></i>
 
-            <a v-if="!options.route"
-               ref="linkA"
-               href="javascript:void(0)"
-               class="nav-menu-item-link"
-               :disabled="options.disabled"
-               @mousedown="menuMousedownHandle">
-                <i class="nav-menu-item-icon"
-                   aria-hidden="true"
-                   :class="options.iconCls"></i>
-                <span class="nav-menu-item-name">
-                    {{options.text}}
-                </span>
-            </a>
+            <div class="nav-menu-item-name">
+                {{options.text}}
+            </div>
 
-            <i class="nav-menu-item-collapse-button"
+            <i class="fa fa-angle-right nav-menu-item-collapse-button"
                aria-hidden="true"
                v-if="hasChildren"
-               :class="[options.expanded == true ? 'fa fa-angle-up': 'fa fa-angle-down']"></i>
+               :class="{'collapsed': childrenVisible}"></i>
 
-        </div>
+        </a>
 
         <div class="nav-menu-item-children"
+             :class="{'visible': childrenVisible}"
              v-if="hasChildren">
-            <NavMenuItem v-for="menu of options.children"
-                         :options="menu"/>
+
+            <NavMenuRouter v-for="menu of options.children"
+                           v-if="menu.route"
+                           :menu="menu"/>
+
         </div>
 
     </div>
@@ -52,13 +39,21 @@
 
     import {mapGetters, mapActions} from 'vuex';
 
+    import NavMenuRouter from './NavMenuRouter';
+
     export default {
         name: 'NavMenuItem',
+        components: {
+            NavMenuRouter
+        },
         props: {
             options: {
                 type: Object,
                 default: null
-            }
+            },
+            index: Number,
+            activeIndex: Number,
+            onTrigger: Function
         },
         data() {
             return {}
@@ -68,38 +63,19 @@
                 isDesktop: 'isDesktop'
             }),
             hasChildren() {
-                return this.options && this.options.children && this.options.children.length > 0;
+                return this.options.children && this.options.children.length > 0;
             },
-            children() {
-                return this.hasChildren ? this.options.children : [];
+            childrenVisible() {
+                return this.index === this.activeIndex;
             }
         },
         methods: {
             ...mapActions([
-                'collapseNavMenu',
-                'toggleMenu'
+                'collapseNavMenu'
             ]),
-            menuMousedownHandle(){
-                this.toggleMenu({
-                    id: this.options.id
-                });
-            },
-            routerLinkActiveHandle() {
-                !this.isDesktop && this.collapseNavMenu();
-                if (this.options.route) {
-                    setTimeout(() => {
-                        this.$router.replace(this.options.route);
-                    }, 0);
-                }
+            menuMousedownHandle() {
+                this.onTrigger && !isNaN(this.index) && this.onTrigger(this.index);
             }
-        },
-        mounted() {
-            this.$refs.linkRouter && this.$refs.linkRouter.$el
-            && this.$refs.linkRouter.$el.addEventListener('mousedown', this.routerLinkActiveHandle);
-        },
-        beforeDestroy() {
-            this.$refs.linkRouter && this.$refs.linkRouter.$el
-            && this.$refs.linkRouter.$el.removeEventListener('mousedown', this.routerLinkActiveHandle);
         }
     }
 

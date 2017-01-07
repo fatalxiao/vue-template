@@ -74,6 +74,13 @@
   font-size: 20px;
   cursor: pointer;
 }
+.nav-menu .nav-menu-user .user-menu-collapse-button.collapsed {
+  transform: rotate(180deg);
+}
+.nav-menu .nav-menu-user .user-name, .nav-menu .nav-menu-user .user-desc, .nav-menu .nav-menu-user .user-contacts, .nav-menu .nav-menu-user .user-menu-collapse-button {
+  opacity: 1;
+  transition: width 200ms ease-in-out, height 200ms ease-in-out, opacity 50ms ease-in-out 150ms;
+}
 .nav-menu .nav-menu-user.collapsed .user-avatar {
   width: 30px;
   height: 30px;
@@ -88,71 +95,61 @@
   margin: 0 0 0 15px;
   text-align: left;
 }
-.nav-menu .nav-menu-user.collapsed .user-desc {
-  height: 0;
+.nav-menu .nav-menu-user.collapsed .user-desc, .nav-menu .nav-menu-user.collapsed .user-contacts {
+  display: none;
+  opacity: 0;
 }
-.nav-menu .nav-menu-user.collapsed .user-contacts {
-  height: 0;
-  margin: 0;
+.nav-menu .nav-menu-list {
+  font-size: 12px;
+  user-select: none;
 }
 .nav-menu .nav-menu-list .nav-menu-item {
   position: relative;
 }
-.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-link {
+.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-folder, .nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-children .nav-menu-item-link {
   display: block;
   height: 50px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: clip;
-  padding: 10px;
-  text-decoration: none;
   box-sizing: border-box;
-  font-size: 12px;
-  line-height: 30px;
+  padding: 0 15px;
   cursor: pointer;
-  position: relative;
-  background: transparent;
-  transition: background 200ms ease-in-out;
+  text-decoration: none;
 }
-.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-link > * {
-  vertical-align: middle;
+.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-folder > *, .nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-children .nav-menu-item-link > * {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  float: left;
+  transition: width 0s 200ms, height 0s 200ms;
 }
-.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-link .nav-menu-item-icon {
-  display: inline-block;
+.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-folder .nav-menu-item-icon, .nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-children .nav-menu-item-link .nav-menu-item-icon {
   width: 30px;
-  height: 30px;
-  line-height: 30px;
+  text-align: center;
+  margin-right: 10px;
+}
+.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-folder .nav-menu-item-collapse-button, .nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-children .nav-menu-item-link .nav-menu-item-collapse-button {
+  float: right;
+  width: 20px;
   text-align: center;
   transition: all 200ms ease-in-out;
 }
-.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-link .nav-menu-item-name {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  transition: all 200ms ease-in-out;
+.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-folder .nav-menu-item-collapse-button.collapsed, .nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-children .nav-menu-item-link .nav-menu-item-collapse-button.collapsed {
+  transform: rotate(-90deg);
 }
-.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-link.router-link-active {
-  cursor: default;
-}
-.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-collapse-button {
-  cursor: pointer;
-  position: absolute;
-  right: 5px;
-  top: 10px;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  font-size: 20px;
+.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-folder .nav-menu-item-name, .nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-children .nav-menu-item-link .nav-menu-item-name, .nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-folder .nav-menu-item-collapse-button, .nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-children .nav-menu-item-link .nav-menu-item-collapse-button {
+  opacity: 1;
+  transition: width 200ms ease-in-out, height 200ms ease-in-out, opacity 50ms ease-in-out 150ms;
 }
 .nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-children {
   overflow: hidden;
-  transition: all 200ms ease-in-out;
-}
-.nav-menu .nav-menu-list .nav-menu-item.collapsed .nav-menu-item-children {
   height: 0;
-  transform: translate3D(-20px, 0, 0);
-  opacity: 0;
+  opacity: 1;
+  transition: left 200ms ease-in-out, opacity 50ms ease-in-out 150ms;
+}
+.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-children.visible {
+  height: auto;
+}
+.nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-children .nav-menu-item-link {
+  display: block;
 }
 
 @media (min-width: 768px) {
@@ -161,53 +158,54 @@
     width: 60px;
     transition: all 200ms ease-in-out;
   }
-  .app.collapsed .nav-menu .nav-menu-user > * {
-    width: 0;
-    height: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
   .app.collapsed .nav-menu .nav-menu-user .user-avatar {
     width: 30px;
     height: 30px;
     line-height: 30px;
     font-size: 18px;
   }
+  .app.collapsed .nav-menu .nav-menu-user .user-name, .app.collapsed .nav-menu .nav-menu-user .user-desc, .app.collapsed .nav-menu .nav-menu-user .user-contacts, .app.collapsed .nav-menu .nav-menu-user .user-menu-collapse-button {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    margin: 0;
+    transition: width 0s, height 0s, opacity 0s;
+  }
   .app.collapsed .nav-menu-list {
     overflow: visible;
   }
   .app.collapsed .nav-menu-list .nav-menu-item {
+    height: 50px;
     overflow: visible;
   }
-  .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-link {
-    z-index: 1;
-  }
-  .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-link .nav-menu-item-icon {
-    width: 40px;
-  }
-  .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-link .nav-menu-item-name {
-    opacity: 0;
+  .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-folder .nav-menu-item-name, .app.collapsed .nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-children .nav-menu-item-link .nav-menu-item-name, .nav-menu .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-children .nav-menu-item-link .nav-menu-item-name, .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-folder .nav-menu-item-collapse-button, .app.collapsed .nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-children .nav-menu-item-link .nav-menu-item-collapse-button, .nav-menu .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-children .nav-menu-item-link .nav-menu-item-collapse-button {
     width: 0;
-  }
-  .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-collapse-button {
-    display: none;
+    height: 0;
     opacity: 0;
+    transition: width 0s, height 0s, opacity 0s;
+  }
+  .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-folder:hover ~ .nav-menu-item-children, .app.collapsed .nav-menu .nav-menu-list .nav-menu-item .nav-menu-item-children .nav-menu-item-link:hover ~ .nav-menu-item-children, .nav-menu .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-children .nav-menu-item-link:hover ~ .nav-menu-item-children {
+    left: 60px;
+    opacity: 1;
   }
   .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-children {
-    height: 0;
-    transform: translate3D(-20px, 0, 0);
-  }
-  .app.collapsed .nav-menu-list .nav-menu-item:hover .nav-menu-item-children {
     position: absolute;
-    top: 0;
-    left: 60px;
-    height: auto;
-    opacity: 1;
-    transform: none;
     width: 200px;
+    height: auto;
+    top: 0;
+    left: -999999px;
+    opacity: 0;
+    padding-left: 6px;
+    transition: left 0s, opacity 0s;
   }
-  .app.collapsed .nav-menu-list .nav-menu-item:hover .nav-menu-item-children * {
+  .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-children .nav-menu-item-name, .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-children .nav-menu-item-collapse-button {
+    width: auto !important;
+    height: auto !important;
     opacity: 1 !important;
+  }
+  .app.collapsed .nav-menu-list .nav-menu-item .nav-menu-item-children:hover {
+    left: 60px;
+    opacity: 1;
   }
 }
 @media (max-width: 767px) {

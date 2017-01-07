@@ -20,44 +20,26 @@
 .theme-light .nav-menu .nav-menu-user .user-menu-collapse-button {
   color: #38B1EB;
 }
-.theme-light .nav-menu .nav-menu-item .nav-menu-item-link {
-  color: #FFF;
-  background: #3c4f62;
+.theme-light .nav-menu .nav-menu-item .nav-menu-item-folder {
+  color: #E3EAF3;
 }
-.theme-light .nav-menu .nav-menu-item .nav-menu-item-link:hover {
-  color: #FFF;
-  background: #405468;
+.theme-light .nav-menu .nav-menu-item .nav-menu-item-folder:hover {
+  background: rgba(255, 255, 255, 0.05);
 }
-.theme-light .nav-menu .nav-menu-item .nav-menu-item-link:focus {
-  color: #FFF;
-  background: #405468;
+.theme-light .nav-menu .nav-menu-item .nav-menu-item-folder:focus {
+  background: rgba(0, 0, 0, 0.05);
 }
-.theme-light .nav-menu .nav-menu-item .nav-menu-item-collapse-button {
-  color: #B8C6D6;
-}
-.theme-light .nav-menu .nav-menu-item.collapsed .nav-menu-item-link {
-  color: #B8C6D6;
+.theme-light .nav-menu .nav-menu-item .nav-menu-item-children .nav-menu-item-link {
+  color: #E3EAF3;
+  text-decoration: none;
   background: #4C637B;
 }
-.theme-light .nav-menu .nav-menu-item.collapsed .nav-menu-item-link:hover {
-  color: #FFF;
-  background: #405468;
+.theme-light .nav-menu .nav-menu-item .nav-menu-item-children .nav-menu-item-link:hover {
+  background: #506881;
 }
-.theme-light .nav-menu .nav-menu-item.collapsed .nav-menu-item-link:focus {
-  color: #FFF;
-  background: #405468;
+.theme-light .nav-menu .nav-menu-item .nav-menu-item-children .nav-menu-item-link:focus {
+  background: #485e75;
 }
-.theme-light .nav-menu .nav-menu-item.leaf .nav-menu-item-link {
-  background: #3c4f62;
-}
-.theme-light .nav-menu .nav-menu-item.leaf .nav-menu-item-link:hover {
-  color: #FFF;
-  background: #405468;
-}
-.theme-light .nav-menu .nav-menu-item.leaf .nav-menu-item-link:focus {
-  color: #FFF;
-  background: #405468;
-}
-.theme-light .nav-menu .nav-menu-item.leaf .nav-menu-item-link.router-link-active {
-  color: #FFF;
+.theme-light .nav-menu .nav-menu-item .nav-menu-item-children .nav-menu-item-link.router-link-active {
+  background: #44596e;
 }

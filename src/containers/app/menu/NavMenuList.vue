@@ -1,8 +1,11 @@
 <template>
     <div class="nav-menu-list"
          v-if="menus.length > 0">
-        <NavMenuItem v-for="menu of menus"
-                     :options="menu"/>
+        <NavMenuItem v-for="(menu, index) of menus"
+                     :options="menu"
+                     :index="index"
+                     :activeIndex="activeIndex"
+                     :onTrigger="toggleMenu"/>
     </div>
 </template>
 
@@ -18,7 +21,9 @@
             NavMenuItem
         },
         data () {
-            return {}
+            return {
+                activeIndex: null
+            }
         },
         computed: {
             ...mapGetters({
@@ -26,6 +31,11 @@
             }),
             menus() {
                 return this.userInfo && this.userInfo.menu && this.userInfo.menu.length > 0 ? this.userInfo.menu : [];
+            }
+        },
+        methods: {
+            toggleMenu(index) {
+                this.activeIndex = this.activeIndex === index ? null : index;
             }
         }
     }

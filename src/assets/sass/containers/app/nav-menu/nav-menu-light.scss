@@ -32,60 +32,37 @@
 	}
 
 	.nav-menu-item {
-
-		.nav-menu-item-link {
-			color: #FFF;
-			background: darken($menu-light, 8%);
+		.nav-menu-item-folder {
+			color: $nav-light;
 
 			&:hover {
-				color: #FFF;
-				background: darken($menu-light, 6%);
+				background: transparentize(#FFF, .95);
 			}
 
 			&:focus {
-				color: #FFF;
-				background: darken($menu-light, 6%);
+				background: transparentize(#000, .95);
 			}
 		}
 
-		.nav-menu-item-collapse-button {
-			color: $light-text-light;
-		}
+		.nav-menu-item-children {
 
-		&.collapsed {
 			.nav-menu-item-link {
-				color: $light-text-light;
+				color: $nav-light;
+				text-decoration: none;
 				background: $menu-light;
 
 				&:hover {
-					color: #FFF;
-					background: darken($menu-light, 6%);
+					background: lighten($menu-light, 2%);
 				}
 
 				&:focus {
-					color: #FFF;
-					background: darken($menu-light, 6%);
-				}
-			}
-		}
-
-		&.leaf {
-			.nav-menu-item-link {
-				background: darken($menu-light, 8%);
-
-				&:hover {
-					color: #FFF;
-					background: darken($menu-light, 6%);
-				}
-
-				&:focus {
-					color: #FFF;
-					background: darken($menu-light, 6%);
+					background: darken($menu-light, 2%);
 				}
 
 				&.router-link-active {
-					color: #FFF;
+					background: darken($menu-light, 4%);
 				}
+
 			}
 		}
 	}

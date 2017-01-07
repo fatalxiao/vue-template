@@ -17,10 +17,6 @@ export const signin = ({commit}, params) => {
 			type: types.SIGNIN_SUCCESS,
 			response
 		});
-		commit({
-			type: types.EXPAND_MENU,
-			id: Util.getFirstMenu(response.data.menu).id
-		});
 		params.successCallback && params.successCallback(response);
 	}, response => {
 		commit({
@@ -86,38 +82,5 @@ export const signout = ({commit}, params) => {
 export const resetErrorMsg = ({commit}) => {
 	commit({
 		type: types.RESET_ERROR_MSG
-	});
-};
-
-/**
- * 折叠用户菜单
- * @param commit
- */
-export const collapseMenu = ({commit}, params) => {
-	commit({
-		type: types.COLLAPSE_MENU,
-		id: params.id
-	});
-};
-
-/**
- * 展开用户菜单
- * @param commit
- */
-export const expandMenu = ({commit}, params) => {
-	commit({
-		type: types.EXPAND_MENU,
-		id: params.id
-	});
-};
-
-/**
- * 折叠／展开用户菜单
- * @param commit
- */
-export const toggleMenu = ({commit}, params) => {
-	commit({
-		type: types.TOGGLE_MENU,
-		id: params.id
 	});
 };

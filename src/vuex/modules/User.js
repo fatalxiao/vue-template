@@ -68,43 +68,6 @@ const mutations = {
 	// 重置 error msg
 	[types.RESET_ERROR_MSG] (state) {
 		state.signinErrorMsg = '';
-	},
-
-	// 折叠菜单
-	[types.COLLAPSE_MENU] (state, info) {
-		let m = _.cloneDeep(state.userInfo.menu);
-		Util.traverseMenu(m, function (menu) {
-			if (menu.id === info.id) {
-				menu.expanded = false;
-			}
-		});
-		state.userInfo.menu = m;
-	},
-
-	// 展开菜单
-	[types.EXPAND_MENU] (state, info) {
-		let m = _.cloneDeep(state.userInfo.menu);
-		Util.traverseMenu(m, function (menu) {
-			if (menu.id === info.id) {
-				menu.expanded = true;
-			} else {
-				menu.expanded = false;
-			}
-		});
-		state.userInfo.menu = m;
-	},
-
-	// 折叠／展开菜单
-	[types.TOGGLE_MENU] (state, info) {
-		let m = _.cloneDeep(state.userInfo.menu);
-		Util.traverseMenu(m, function (menu) {
-			if (menu.id === info.id) {
-				menu.expanded = !!!menu.expanded;
-			} else {
-				menu.expanded = false;
-			}
-		});
-		state.userInfo.menu = m;
 	}
 
 };

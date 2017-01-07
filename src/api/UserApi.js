@@ -1,26 +1,20 @@
 const MENU = [{
-	id: '0',
 	iconCls: 'fa fa-list',
 	text: 'Table Template',
 	children: [{
-		id: '0-0',
 		text: 'User Table',
 		route: '/app/table/user-table'
 	}, {
-		id: '0-1',
 		text: 'Custom Table',
 		route: '/app/table/custom-table'
 	}]
 }, {
-	id: '1',
 	iconCls: 'fa fa-file-text',
 	text: 'Form Template',
 	children: [{
-		id: '1-0',
 		text: 'Form Elements',
 		route: '/app/form/form-elements'
 	}, {
-		id: '1-1',
 		text: 'Selects',
 		route: '/app/form/selects'
 	}]

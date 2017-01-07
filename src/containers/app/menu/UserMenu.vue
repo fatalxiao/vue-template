@@ -23,8 +23,8 @@
             </a>
         </div>
 
-        <i class="user-menu-collapse-button"
-           :class="[userMenuCollapsed ? 'fa fa-angle-down' : 'fa fa-angle-up']"
+        <i class="fa fa-angle-up user-menu-collapse-button"
+           :class="{'collapsed': userMenuCollapsed}"
            aria-hidden="true"
            @mousedown="toggleUserMenu"></i>
 
