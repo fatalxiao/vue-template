@@ -32,54 +32,37 @@
 	}
 
 	.nav-menu-item {
-		background: $menu-dark;
-
-		.nav-menu-item-link {
+		.nav-menu-item-folder {
 			color: $light-text-dark;
 
 			&:hover {
 				background: transparentize(#FFF, .95);
+			}
+
+			&:focus {
+				background: transparentize(#000, .95);
+			}
+		}
+
+		.nav-menu-item-children {
+
+			.nav-menu-item-link {
 				color: $light-text-dark;
-			}
-
-			&:active {
-				background: transparentize(#000, .9);
-			}
-
-			&.router-link-active {
-				color: #FFF;
-				background: $highlight-dark;
-				//background: transparentize(#000, .9);
-
-				.nav-menu-item-icon {
-					color: #FFF;
-				}
-
-				& ~ .nav-menu-item-collapse-button {
-					color: #FFF;
-				}
+				text-decoration: none;
+				background: $menu-dark;
 
 				&:hover {
-					background: $highlight-dark;
-					color: #FFF;
+					background: lighten($menu-dark, 2%);
 				}
 
-				&:active {
-					background: $highlight-dark;
+				&:focus {
+					background: darken($menu-dark, 2%);
 				}
-			}
-		}
 
-		.nav-menu-item-collapse-button {
-			color: $light-text-dark;
-		}
-
-		&.no-child {
-			.nav-menu-item-link {
 				&.router-link-active {
-					color: $highlight-dark;
-					background: transparent;
+					background: darken($menu-dark, 4%);
 				}
+
 			}
 		}
 	}

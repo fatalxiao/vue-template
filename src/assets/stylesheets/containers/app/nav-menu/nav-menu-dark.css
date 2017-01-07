@@ -20,40 +20,26 @@
 .theme-dark .nav-menu .nav-menu-user .user-menu-collapse-button {
   color: #5AB0EE;
 }
-.theme-dark .nav-menu .nav-menu-item {
+.theme-dark .nav-menu .nav-menu-item .nav-menu-item-folder {
+  color: #F0F4F6;
+}
+.theme-dark .nav-menu .nav-menu-item .nav-menu-item-folder:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+.theme-dark .nav-menu .nav-menu-item .nav-menu-item-folder:focus {
+  background: rgba(0, 0, 0, 0.05);
+}
+.theme-dark .nav-menu .nav-menu-item .nav-menu-item-children .nav-menu-item-link {
+  color: #F0F4F6;
+  text-decoration: none;
   background: #364760;
 }
-.theme-dark .nav-menu .nav-menu-item .nav-menu-item-link {
-  color: #F0F4F6;
+.theme-dark .nav-menu .nav-menu-item .nav-menu-item-children .nav-menu-item-link:hover {
+  background: #3a4c67;
 }
-.theme-dark .nav-menu .nav-menu-item .nav-menu-item-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #F0F4F6;
+.theme-dark .nav-menu .nav-menu-item .nav-menu-item-children .nav-menu-item-link:focus {
+  background: #324259;
 }
-.theme-dark .nav-menu .nav-menu-item .nav-menu-item-link:active {
-  background: rgba(0, 0, 0, 0.1);
-}
-.theme-dark .nav-menu .nav-menu-item .nav-menu-item-link.router-link-active {
-  color: #FFF;
-  background: #5AB0EE;
-}
-.theme-dark .nav-menu .nav-menu-item .nav-menu-item-link.router-link-active .nav-menu-item-icon {
-  color: #FFF;
-}
-.theme-dark .nav-menu .nav-menu-item .nav-menu-item-link.router-link-active ~ .nav-menu-item-collapse-button {
-  color: #FFF;
-}
-.theme-dark .nav-menu .nav-menu-item .nav-menu-item-link.router-link-active:hover {
-  background: #5AB0EE;
-  color: #FFF;
-}
-.theme-dark .nav-menu .nav-menu-item .nav-menu-item-link.router-link-active:active {
-  background: #5AB0EE;
-}
-.theme-dark .nav-menu .nav-menu-item .nav-menu-item-collapse-button {
-  color: #F0F4F6;
-}
-.theme-dark .nav-menu .nav-menu-item.no-child .nav-menu-item-link.router-link-active {
-  color: #5AB0EE;
-  background: transparent;
+.theme-dark .nav-menu .nav-menu-item .nav-menu-item-children .nav-menu-item-link.router-link-active {
+  background: #2f3d53;
 }
