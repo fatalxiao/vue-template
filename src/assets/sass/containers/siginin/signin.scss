@@ -5,16 +5,19 @@
 	width: 100%;
 	height: 100%;
 
-	h1 {
+	& > * {
 		width: 400px;
-		line-height: 40px;
 		text-align: center;
+		margin: 20px auto;
+		user-select: none;
+	}
+
+	h1 {
+		line-height: 40px;
 		margin: 10% auto 2%;
 	}
 
-	.form {
-		width: 400px;
-		margin: 0 auto;
+	.signin-form {
 		box-sizing: border-box;
 		background: transparent;
 		padding: 10px;
@@ -41,10 +44,41 @@
 
 	}
 
+	.signin-theme {
+		position: relative;
+
+		.signin-theme-button {
+			cursor: pointer;
+		}
+
+		.signin-theme-popup {
+			width: 400px;
+			top: 20px;
+
+			.triangle {
+				left: 197px;
+			}
+
+			.content {
+
+				@include floatfix;
+
+				padding: 20px;
+				box-sizing: border-box;
+
+				& > * {
+					float: left;
+					margin-left: 40px;
+				}
+
+				& > *:first-child {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
 	.copyright {
-		width: 400px;
-		text-align: center;
-		margin: 20px auto;
 		font-size: 12px;
 		line-height: 20px;
 		transition: all $transition-duration ease-in-out;
@@ -60,7 +94,7 @@
 			margin: 20% auto 4%;
 		}
 
-		.form {
+		.signin-form {
 			width: 100%;
 		}
 

@@ -16,7 +16,7 @@
                @keydown="keydownHandle"/>
 
         <i class="password-visible-icon"
-           :class="[passwordVisible ? 'fa fa-eye-slash' : 'fa fa-eye']"
+           :class="[passwordVisible ? 'fa fa-eye' : 'fa fa-eye-slash']"
            aria-hidden="true"
            v-if="isPassword"
            @mousedown="togglePasswordVisible"></i>

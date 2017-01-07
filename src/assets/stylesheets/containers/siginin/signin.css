@@ -3,24 +3,26 @@
   width: 100%;
   height: 100%;
 }
-.signin h1 {
+.signin > * {
   width: 400px;
-  line-height: 40px;
   text-align: center;
+  margin: 20px auto;
+  user-select: none;
+}
+.signin h1 {
+  line-height: 40px;
   margin: 10% auto 2%;
 }
-.signin .form {
-  width: 400px;
-  margin: 0 auto;
+.signin .signin-form {
   box-sizing: border-box;
   background: transparent;
   padding: 10px;
 }
-.signin .form .field {
+.signin .signin-form .field {
   width: 100%;
   margin-top: 20px;
 }
-.signin .form .error-msg {
+.signin .signin-form .error-msg {
   margin-top: 10px;
   width: 100%;
   height: 20px;
@@ -29,14 +31,42 @@
   font-size: 14px;
   text-align: center;
 }
-.signin .form .sign-in-button {
+.signin .signin-form .sign-in-button {
   width: 100%;
   margin-top: 10px;
 }
-.signin .copyright {
+.signin .signin-theme {
+  position: relative;
+}
+.signin .signin-theme .signin-theme-button {
+  cursor: pointer;
+}
+.signin .signin-theme .signin-theme-popup {
   width: 400px;
-  text-align: center;
-  margin: 20px auto;
+  top: 20px;
+}
+.signin .signin-theme .signin-theme-popup .triangle {
+  left: 197px;
+}
+.signin .signin-theme .signin-theme-popup .content {
+  padding: 20px;
+  box-sizing: border-box;
+}
+.signin .signin-theme .signin-theme-popup .content::before, .signin .signin-theme .signin-theme-popup .content::after {
+  display: table;
+  content: "";
+}
+.signin .signin-theme .signin-theme-popup .content::after {
+  clear: both;
+}
+.signin .signin-theme .signin-theme-popup .content > * {
+  float: left;
+  margin-left: 40px;
+}
+.signin .signin-theme .signin-theme-popup .content > *:first-child {
+  margin-left: 0;
+}
+.signin .copyright {
   font-size: 12px;
   line-height: 20px;
   transition: all 200ms ease-in-out;
@@ -50,7 +80,7 @@
     width: 100%;
     margin: 20% auto 4%;
   }
-  .signin .form {
+  .signin .signin-form {
     width: 100%;
   }
   .signin .copyright {

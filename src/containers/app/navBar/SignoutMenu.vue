@@ -23,6 +23,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+
 	import {mapGetters, mapActions} from 'vuex';
 	import * as types from '../../../vuex/mutationTypes/UserMutationTypes';
 
@@ -55,7 +56,7 @@
 			...mapActions([
 				'signout'
 			]),
-			signoutClickHandle () {
+			signoutClickHandle() {
 
 				const token = sessionStorage.getItem('token');
 				if (!token) {
@@ -73,18 +74,16 @@
 				}
 
 			},
-			mousedownHandle (e) {
+			mousedownHandle(e) {
 
 				let el = e.target,
-						flag = true;
+					flag = true;
 
 				while (el) {
-					if (this.$refs.userPopup
-							&& (el == this.$refs.userPopup || el == this.$refs.userPopup.$el)) {
+					if (this.$refs.userPopup && el == this.$refs.userPopup.$el) {
 						flag = false;
 						break;
-					} else if (this.$refs.userButton
-							&& (el == this.$refs.userButton || el == this.$refs.userButton.$el)) {
+					} else if (el == this.$refs.userButton) {
 						this.userPopupHidden = !this.userPopupHidden;
 						flag = false;
 						break;
@@ -98,13 +97,14 @@
 
 			}
 		},
-		created () {
+		created() {
 			document.addEventListener('mousedown', this.mousedownHandle);
 		},
-		destroyed(){
+		destroyed() {
 			document.removeEventListener('mousedown', this.mousedownHandle);
 		}
 	}
+
 </script>
 
 <style scoped>
