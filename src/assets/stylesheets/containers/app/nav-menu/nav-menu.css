@@ -216,13 +216,13 @@
     z-index: 70;
   }
   .app .nav-menu .nav-menu-user {
-    width: 80% !important;
+    width: 300px !important;
   }
   .app .nav-menu .nav-menu-user .user-contacts {
     transition: none;
   }
   .app .nav-menu .nav-menu-list {
-    width: 80% !important;
+    width: 300px !important;
   }
   .app.collapsed .nav-menu {
     transform: translate3d(-75%, 0, 0) scale(0.9);

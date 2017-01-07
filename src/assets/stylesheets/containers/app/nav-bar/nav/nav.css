@@ -46,5 +46,6 @@
     width: 0;
     margin-left: 0;
     box-shadow: none;
+    overflow: hidden;
   }
 }

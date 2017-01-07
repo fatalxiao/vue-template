@@ -1,6 +1,8 @@
 .app {
+  position: relative;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 .app .content-wrap {
   position: absolute;
@@ -46,7 +48,7 @@
 
 @media (max-width: 767px) {
   .app .content-wrap {
-    transform: translate3d(75%, 0, 0) scale(0.9);
+    transform: translate3d(calc(300px - 5%), 0, 0) scale(0.9);
     width: 100%;
     margin: 0;
     overflow: hidden;
