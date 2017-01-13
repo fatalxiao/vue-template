@@ -32,7 +32,7 @@
 </script>
 
 <style scoped>
-	@import '../../assets/stylesheets/containers/siginin/signin.css';
-	@import '../../assets/stylesheets/containers/siginin/signin-dark.css';
-	@import '../../assets/stylesheets/containers/siginin/signin-light.css';
+	@import '../../assets/stylesheets/containers/signin/signin.css';
+	@import '../../assets/stylesheets/containers/signin/signin-dark.css';
+	@import '../../assets/stylesheets/containers/signin/signin-light.css';
 </style>

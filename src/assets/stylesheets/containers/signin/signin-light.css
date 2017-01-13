@@ -1,0 +1,21 @@
+.theme-light .signin {
+  background: #E3EAF3;
+}
+.theme-light .signin h1 {
+  color: #4C637B;
+}
+.theme-light .signin .signin-theme .signin-theme-button {
+  color: #7e96af;
+}
+.theme-light .signin .signin-theme .signin-theme-button .signin-theme-collapse-button {
+  color: #38B1EB;
+}
+.theme-light .signin .signin-theme .signin-theme-popup .triangle {
+  border-bottom-color: #FFF;
+}
+.theme-light .signin .signin-theme .signin-theme-popup .content {
+  background: #FFF;
+}
+.theme-light .signin .copyright {
+  color: #bdc9d6;
+}
