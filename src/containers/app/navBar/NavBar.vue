@@ -7,7 +7,6 @@
 
 			<div class="left">
 				<MenuCtrlButton/>
-				<!--<UserMenuButton/>-->
 			</div>
 
 			<div class="right">
@@ -26,7 +25,6 @@
 
 	import Brand from './Brand';
 	import MenuCtrlButton from './MenuCtrlButton';
-	// import UserMenuButton from './UserMenuButton';
 	import ThemeMenu from './ThemeMenu';
 	import SignoutMenu from './SignoutMenu';
 
@@ -35,7 +33,6 @@
 		components: {
 			Brand,
 			MenuCtrlButton,
-			// UserMenuButton,
 			ThemeMenu,
 			SignoutMenu
 		}

@@ -25,6 +25,4 @@
 
 <style scoped>
 	@import '../../assets/stylesheets/components/popup/popup.css';
-	@import '../../assets/stylesheets/components/popup/popup-dark.css';
-	@import '../../assets/stylesheets/components/popup/popup-light.css';
 </style>
