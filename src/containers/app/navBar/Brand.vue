@@ -19,30 +19,8 @@
 	import {mapGetters, mapActions} from 'vuex';
 	import * as types from '../../../vuex/mutationTypes/UserMutationTypes';
 
-	import DropdownMenu from '../../../components/dropdown/DropdownMenu';
-	import SimpleButton from '../../../components/button/SimpleButton';
-
 	export default {
 		name: 'Brand',
-		components: {
-			DropdownMenu,
-			SimpleButton
-		},
-		data() {
-			return {
-				userMenuActivated: false
-			};
-		},
-		computed: {
-			...mapGetters({
-				isDesktop: 'isDesktop',
-				navMenuCollapsed: 'navMenuCollapsed',
-				signoutActionType: 'signoutActionType'
-			}),
-			userName() {
-				return sessionStorage.getItem('userName') || 'User';
-			}
-		},
 		methods: {
 			...mapActions([
 				'toggleNavMenu'
@@ -51,9 +29,6 @@
 				e.stopPropagation();
 				this.toggleNavMenu();
 			}
-		},
-		created() {
-
 		}
 	}
 
