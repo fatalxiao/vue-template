@@ -11,7 +11,8 @@ Thumbs.db
 
 # Dependency directories
 node_modules
-src/assets/.sass-cache
+.sass-cache
+package-lock.json
 
 # Dist directories
 dist
